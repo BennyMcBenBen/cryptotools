@@ -1,4 +1,5 @@
 package cryptotools;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -8,9 +9,6 @@ import java.util.regex.Pattern;
 /**
  * Playfair cipher: When creating the table, follows the omit Q rule (rather
  * than combine i and j).
- * 
- * @author Ben Zoller
- * 
  */
 public class PlayfairCipher implements Cipher {
 	// TODO: implement other rules (combine i and j by replacing j with i)
@@ -197,7 +195,7 @@ public class PlayfairCipher implements Cipher {
 		// normal plaintext formatting
 		text = text.toLowerCase();
 		text = text.replaceAll("[^a-z]", "");
-		
+
 		// replace all 'q' letter with blank spaces
 		// 'q' is not within the 5x5 grid
 		text = text.replace("q", "");
@@ -243,13 +241,14 @@ public class PlayfairCipher implements Cipher {
 			throw new IllegalArgumentException("Ciphertext cannot contain 'Q'");
 		}
 		if (ciphertext.length() % 2 == 1) {
-			throw new IllegalArgumentException("Ciphertext must be of even length");
+			throw new IllegalArgumentException(
+					"Ciphertext must be of even length");
 		}
-		
+
 		// decrypt ciphertext
 		// assuming ciphertext properly formatted
 		String text = ciphertext.toLowerCase();
-		
+
 		StringBuilder plaintext = new StringBuilder();
 		for (int i = 0, j = 1; j < text.length(); i += 2, j += 2) {
 			Index iIndex = tableMap.get(text.charAt(i));

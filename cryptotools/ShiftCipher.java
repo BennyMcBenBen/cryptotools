@@ -1,11 +1,5 @@
 package cryptotools;
 
-/* 
- * @(#)ShiftCipher.java	1.0 Sep 2, 2006
- *
- * COPYRIGHT BEN ZOLLER, 2006
- * ALL RIGHTS RESERVED
- */
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,7 +12,6 @@ import java.util.regex.Pattern;
  * Ciphertext is decrypted by shifting each letter back <em>k</em> places to
  * produce plaintext.
  * 
- * @author Ben Zoller
  * @version 1.0
  * 
  */
@@ -64,7 +57,7 @@ public class ShiftCipher implements Cipher {
 		// create the hashmap based on the key
 		createCryptHashMaps();
 	}
-	
+
 	public String formatPlaintext(String text) {
 		text = text.toLowerCase();
 		text = text.replaceAll("[^a-z]", "");
@@ -144,7 +137,7 @@ public class ShiftCipher implements Cipher {
 		}
 		return plaintextBuilder.toString();
 	}
-	
+
 	public static void main(String[] args) {
 		ShiftCipher sc = new ShiftCipher(5);
 		String plaintext = "Goodbye World!";

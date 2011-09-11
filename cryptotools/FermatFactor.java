@@ -1,4 +1,5 @@
 package cryptotools;
+
 public class FermatFactor {
 	final int x, y;
 

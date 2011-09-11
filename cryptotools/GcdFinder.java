@@ -1,4 +1,5 @@
 package cryptotools;
+
 public class GcdFinder {
 
 	public static int computeGcd(int a, int b) {

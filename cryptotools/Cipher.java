@@ -1,6 +1,7 @@
 package cryptotools;
 
 public interface Cipher {
-	public String encrypt(final String plaintext);
-	public String decrypt(final String ciphertext);
+	String encrypt(String plaintext);
+
+	String decrypt(String ciphertext);
 }

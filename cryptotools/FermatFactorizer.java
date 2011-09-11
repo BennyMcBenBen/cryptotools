@@ -1,4 +1,5 @@
 package cryptotools;
+
 public class FermatFactorizer {
 
 	public static FermatFactor factor(final int n) {
@@ -10,10 +11,10 @@ public class FermatFactorizer {
 		if (n % 2 == 0) {
 			// n is even
 			return new FermatFactor(2, n / 2);
-			
+
 		} else {
 			// n is odd
-			
+
 			// this while test can't be right. work it out
 			while (y - x < bound) {
 
